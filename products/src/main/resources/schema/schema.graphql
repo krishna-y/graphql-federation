@@ -1,0 +1,13 @@
+type Actor{
+    name: String,
+    age : Int
+}
+type Show @key(fields: "title"){
+    title: String
+    releaseYear: Int
+    actors: [Actor]
+}
+
+type Query {
+    shows(titleFilter: String): [Show]
+}

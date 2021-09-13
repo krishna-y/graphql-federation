@@ -1,0 +1,5 @@
+type Show @key(fields: "title") @extends {
+    title: String @external
+    review: String
+    rating: Int
+}
