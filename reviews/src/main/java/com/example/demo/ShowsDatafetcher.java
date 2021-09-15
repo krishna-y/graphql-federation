@@ -23,23 +23,21 @@ import static com.example.demo.MyContextBuilder.*;
 public class ShowsDatafetcher {
 
     private final List<Show> shows = ImmutableList.of(
-            new Show("Stranger Things", "Bad"),
-            new Show("Ozark", "Average"),
-            new Show("The Crown", "Good"),
-            new Show("Dead to Me", "Okay"),
-            new Show("Orange is the New Black", "Not So Great")
+            new Show("Stranger Things"),
+            new Show("Ozark"),
+            new Show("The Crown"),
+            new Show("Dead to Me"),
+            new Show("Orange is the New Black")
     );
 
     @DgsEntityFetcher(name = "Show")
     public Show show(Map<String, Object> values) {
-        DataLoaderRegistry
         return shows.stream().filter(s -> s.getTitle()
                 .contains((String) values.get("title"))).findAny().orElse(null);
     }
 
     @DgsData(parentType = "Show", field = "review")
-    public String review(DgsDataFetchingEnvironment dfe){
-        Show source = dfe.getSource();
-        return source.getReview() + "- Suffix Added";
+    public String review(){
+        return "Bad Reviews"  + "- Suffix Added";
     }
 }

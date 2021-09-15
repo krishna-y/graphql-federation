@@ -1,3 +1,14 @@
+interface MastHeadItem {
+    id : String!
+}
+
+type ContentItem implements MastHeadItem {
+    id : String!
+    title : String,
+    description : String,
+
+}
+
 type Actor{
     name: String,
     age : Int
@@ -8,6 +19,91 @@ type Show @key(fields: "title"){
     actors: [Actor]
 }
 
+
+type Dummy2 {
+    name: String,
+    value: String
+}
+
+
+type UnionObject @key(fields: "pid"){
+    pid    : String,
+    dummy2 : [Dummy2],
+}
+
 type Query {
     shows(titleFilter: String): [Show]
+    UnionObject(pid: String) : UnionObject
+    mastHeadItem : [MastHeadItem]
 }
+
+
+type MastHead{
+    AvItem : [],
+}
+
+
+MDDS fetchMastHead(PID)
+{
+
+    []..ADvITem{
+        aid, url
+    }
+    []..ContentITem{
+        cid, title
+    }
+    []..SportsITem{
+        cid, score
+    }
+}
+
+//ADDS
+type AdvtItem {
+    aid: Int
+}
+
+//CDDS
+type ContentItem {
+    cid : Int
+    title : String
+    desc: String
+}
+
+//SpDDS
+type SportsItem {
+    cid: Int
+    title: String @external ContentItem.title
+    playbackurl : String @external Playback.url
+    interval : String @external Playback.interval
+    score: String
+}
+
+//PBDDS
+type PlaybackItem {
+    cid: Int
+    url : String
+    interval : Int
+}
+
+//other way, not chosen
+type SportsItem {
+cid: Int
+item: ContentItem @external
+score: String
+}
+
+
+Response
+
+{   PID
+    AdvItem{
+        ID
+    }
+    ContentItem{
+        ID
+    }
+}
+
+
+}
+

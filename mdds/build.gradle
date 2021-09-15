@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.10'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(platform("com.netflix.graphql.dgs:latest.release"))
+	implementation 'com.netflix.graphql.dgs:graphql-dgs-webflux-starter:4.5.1'
+}
+
+
+test {
+	useJUnitPlatform()
+}

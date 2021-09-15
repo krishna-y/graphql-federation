@@ -26,8 +26,6 @@ public class MyContextBuilder implements DgsCustomContextBuilder<MyContext> {
             }
         };
 
-        BatchData
-
         this.actorsDataLoader = DataLoader
                 .newDataLoader(batchLoader, DataLoaderOptions.newOptions().setMaxBatchSize(10).setBatchingEnabled(true));
         completedFuture(null).

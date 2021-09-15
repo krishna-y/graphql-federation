@@ -1,4 +1,4 @@
-package com.example.demo;
+package mdds;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Collections;
 
 @SpringBootApplication
-public class DemoApplication {
+public class MDDSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(DemoApplication.class);
+		SpringApplication app = new SpringApplication(MDDSApplication.class);
 		app.setDefaultProperties(Collections
-				.singletonMap("server.port", "8080"));
+				.singletonMap("server.port", "8082"));
 		app.run(args);
 	}
 

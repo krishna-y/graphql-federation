@@ -1,0 +1,15 @@
+
+type ContentItem @key(fields: "cid"){
+    cid: Int
+}
+
+type MastHead{
+    contentItems : [ContentItem],
+}
+
+type Query {
+    mastHead(pid : String) : MastHead
+}
+
+
+

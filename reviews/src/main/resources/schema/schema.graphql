@@ -1,5 +1,30 @@
+interface MastHeadItem {
+    id : String!
+}
+
+type AdvtItem implements MastHeadItem {
+    id : String!
+    trackerUrl: String
+}
+
 type Show @key(fields: "title") @extends {
     title: String @external
+    description: String
+    rating: Int,
     review: String
-    rating: Int
+}
+
+type Dummy {
+    title: String
+    rating : Int
+}
+
+type UnionObject @key(fields: "pid") @extends{
+    pid    : String @external,
+    dummy : [Dummy],
+}
+
+
+type Query {
+    mastHeadItem : [MastHeadItem]
 }
