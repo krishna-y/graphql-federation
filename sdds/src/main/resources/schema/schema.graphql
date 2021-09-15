@@ -1,0 +1,7 @@
+
+type AdvtItem @key(fields: "aid") @extends{
+    aid: Int @external
+    url : String
+}
+
+

@@ -1,11 +1,14 @@
 
+
 type ContentItem @key(fields: "cid"){
     cid: Int
 }
 
-type AdvtItem @key(fields: "aid"){
+type AdvtItem @key(fields: "aid") {
     aid: Int
 }
+
+union Item = ContentItem | AdvtItem
 
 type MastHead{
     contentItems : [ContentItem],
@@ -14,6 +17,7 @@ type MastHead{
 
 type Query {
     mastHead(pid : String) : MastHead
+    mastHeadList(pid : String) : [Item]
 }
 
 

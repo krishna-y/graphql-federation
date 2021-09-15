@@ -5,6 +5,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Collections;
 
+/***
+ * query{
+ *   mastHeadList(pid: "1"){
+ *     __typename
+ *     ... on ContentItem{
+ *       cid,
+ *       description
+ *     }
+ *    ... on AdvtItem{
+ *     aid,
+ *     url
+ *   }
+ *
+ *   }
+ * }
+ *
+ *
+ */
 @SpringBootApplication
 public class MDDSApplication {
 
