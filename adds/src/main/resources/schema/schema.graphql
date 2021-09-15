@@ -1,8 +1,7 @@
 
-type ContentItem @key(fields: "cid") @extends{
-    cid: Int @external
-    title : String
-    description : String
+type AdvtItem @key(fields: "aid") @extends{
+    aid: Int @external
+    url : String
 }
 
 

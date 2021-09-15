@@ -3,8 +3,13 @@ type ContentItem @key(fields: "cid"){
     cid: Int
 }
 
+type AdvtItem @key(fields: "aid"){
+    aid: Int
+}
+
 type MastHead{
     contentItems : [ContentItem],
+    advtItems : [AdvtItem]
 }
 
 type Query {
