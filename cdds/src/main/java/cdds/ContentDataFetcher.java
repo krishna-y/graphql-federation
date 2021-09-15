@@ -1,7 +1,6 @@
 package cdds;
 
-import com.netflix.graphql.dgs.DgsComponent;
-import com.netflix.graphql.dgs.DgsEntityFetcher;
+import com.netflix.graphql.dgs.*;
 import graphql.com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
@@ -19,4 +18,22 @@ public class ContentDataFetcher {
     public ContentItem contentItem(Map<String, Object> values){
         return map.get(values.get("cid"));
     }
+
+    @DgsEntityFetcher(name = "SportsItem")
+    public SportsItem sportsItem(Map<String, Object> values){
+        Integer cid = (Integer) values.get("cid");
+        Integer test = (Integer) values.get("test");
+
+        ContentItem contentItem = map.get(cid);
+        return new SportsItem(cid, contentItem.getTitle(), test, contentItem.getDescription());
+    }
+
+    @DgsData(parentType = "SportsItem", field = "cidtest")
+    public String cidtest(DgsDataFetchingEnvironment dgsDataFetchingEnvironment){
+        SportsItem source = dgsDataFetchingEnvironment.getSource();
+        Integer cid = source.getCid();
+        Integer score = source.getTest();
+        return cid + "" + score;
+    }
+
 }

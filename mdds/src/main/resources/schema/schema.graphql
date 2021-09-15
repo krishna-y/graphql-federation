@@ -8,7 +8,12 @@ type AdvtItem @key(fields: "aid") {
     aid: Int
 }
 
-union Item = ContentItem | AdvtItem
+type SportsItem @key(fields: "cid"){
+    cid: Int
+    test: Int
+}
+
+union Item = ContentItem | AdvtItem | SportsItem
 
 type MastHead{
     contentItems : [ContentItem],

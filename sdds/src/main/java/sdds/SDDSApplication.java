@@ -1,4 +1,4 @@
-package adds;
+package sdds;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Collections;
 
 @SpringBootApplication
-public class ADDSApplication {
+public class SDDSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(ADDSApplication.class);
+		SpringApplication app = new SpringApplication(SDDSApplication.class);
 		app.setDefaultProperties(Collections
-				.singletonMap("server.port", "8084"));
+				.singletonMap("server.port", "8085"));
 		app.run(args);
 	}
 

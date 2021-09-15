@@ -6,3 +6,10 @@ type ContentItem @key(fields: "cid") @extends{
 }
 
 
+type SportsItem @key(fields: "cid") @extends{
+    cid: Int @external
+    test: Int @external
+    cidtest : String @requires(fields: "cid test")
+    title : String
+    description: String
+}
