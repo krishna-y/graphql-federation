@@ -11,7 +11,7 @@ Play on : http://localhost:4000/
 Queries
 
 **UNION**
-
+```
 query{
   mastHeadList(pid: "2"){
     __typename
@@ -32,10 +32,10 @@ query{
     
   }
 }
-
+```
 
 **Composition**
-
+```
 query{
   page(pid: "2"){
     mastHead{
@@ -55,3 +55,4 @@ query{
     
   }
 }
+```
