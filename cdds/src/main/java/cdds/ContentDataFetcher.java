@@ -22,18 +22,9 @@ public class ContentDataFetcher {
     @DgsEntityFetcher(name = "SportsItem")
     public SportsItem sportsItem(Map<String, Object> values){
         Integer cid = (Integer) values.get("cid");
-        Integer test = (Integer) values.get("test");
-
         ContentItem contentItem = map.get(cid);
-        return new SportsItem(cid, contentItem.getTitle(), test, contentItem.getDescription());
+        return new SportsItem(cid, contentItem.getTitle(), contentItem.getDescription());
     }
 
-    @DgsData(parentType = "SportsItem", field = "cidtest")
-    public String cidtest(DgsDataFetchingEnvironment dgsDataFetchingEnvironment){
-        SportsItem source = dgsDataFetchingEnvironment.getSource();
-        Integer cid = source.getCid();
-        Integer score = source.getTest();
-        return cid + "" + score;
-    }
 
 }

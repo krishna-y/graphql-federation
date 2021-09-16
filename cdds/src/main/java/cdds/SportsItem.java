@@ -3,13 +3,11 @@ package cdds;
 public class SportsItem {
     private final Integer cid;
     private final String title;
-    private final Integer test;
     private final String description;
 
-    public SportsItem(Integer cid, String title, Integer test, String description) {
+    public SportsItem(Integer cid, String title, String description) {
         this.cid = cid;
         this.title = title;
-        this.test = test;
         this.description = description;
     }
 
@@ -25,7 +23,4 @@ public class SportsItem {
         return cid;
     }
 
-    public Integer getTest() {
-        return test;
-    }
 }

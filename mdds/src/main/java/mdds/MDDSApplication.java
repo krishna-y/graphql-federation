@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Collections;
 
 /***
+ *
  * query{
- *   mastHeadList(pid: "1"){
+ *   mastHeadList(pid: "2"){
  *     __typename
  *     ... on ContentItem{
  *       cid,
@@ -17,11 +18,35 @@ import java.util.Collections;
  *     aid,
  *     url
  *   }
+ *     ... on SportsItem{
+ *       cid,
+ *       score,
+ *       title,
+ *       description
+ *     }
  *
  *   }
  * }
  *
+ * query{
+ *   mastHead(pid: "2"){
+ *     contentItems{
+ *       cid,
+ *       description
+ *     },
+ *     advtItems{
+ *     aid,
+ *     url
+ *     } ,
+ *     sportsItems{
+ *       cid,
+ *       score,
+ *       title,
+ *       description
+ *     }
  *
+ *   }
+ * }
  */
 @SpringBootApplication
 public class MDDSApplication {

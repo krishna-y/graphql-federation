@@ -1,6 +1,6 @@
 
-type SportsItem @key(fields: "cid") @extends{
-    cid: Int @external
+type SportsItem @key(fields: "cid"){
+    cid: Int
     score : String
 }
 
