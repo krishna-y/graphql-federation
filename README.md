@@ -37,14 +37,14 @@ query{
 **Composition**
 ```
 query{
-  page(pid: "2"){
-    mastHead{
+  mastHead(pid: "2"){
+    contentItems{
       cid,
       description
     },
-    cw{
-    aid,
-    url
+    advtItems{
+    	aid,
+    	url
     } ,
     sportsItems{
       cid,
